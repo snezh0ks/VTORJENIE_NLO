@@ -61,11 +61,11 @@ namespace VTORJENIE_NLO.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на привет мир!.
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
         /// </summary>
-        internal static string code {
+        internal static System.IO.UnmanagedMemoryStream background {
             get {
-                return ResourceManager.GetString("code", resourceCulture);
+                return ResourceManager.GetStream("background", resourceCulture);
             }
         }
         
@@ -82,9 +82,9 @@ namespace VTORJENIE_NLO.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream soundBG {
+        internal static System.IO.UnmanagedMemoryStream voice {
             get {
-                return ResourceManager.GetStream("soundBG", resourceCulture);
+                return ResourceManager.GetStream("voice", resourceCulture);
             }
         }
     }

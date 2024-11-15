@@ -83,7 +83,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="TEXT\code.txt" />
+    <None Include="Resources\voice.wav" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -95,21 +95,15 @@
     <Resource Include="IMG\buttonNormal.png" />
     <Resource Include="IMG\buttonHover.png" />
     <Resource Include="IMG\buttonPressed.png" />
+    <Resource Include="IMG\logo.png" />
+    <Resource Include="IMG\background.png" />
+    <None Include="Resources\background.wav" />
     <Content Include="Resources\Monocraft.otf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="IMG\menuBG.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="IMG\ufo.png" />
-    <Content Include="SOUND\soundBG.wav">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

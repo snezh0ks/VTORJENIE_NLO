@@ -23,60 +23,61 @@ namespace VTORJENIE_NLO
     public partial class MainWindow : Window
     {
 
-        private SoundPlayer bg_music = new SoundPlayer(Properties.Resources.soundBG);
+        private SoundPlayer backgroundMusic = new SoundPlayer(Properties.Resources.background);
+        private MediaPlayer voiceSound = new MediaPlayer();
+        private MediaPlayer uiSound = new MediaPlayer();
+        private string url = "https://github.com/snezh0ks/VTORJENIE_NLO";
 
         public MainWindow()
         {
             InitializeComponent();
             PlayBackgroundMusic();
-            StartVerticalAnimation();
+            logoAnimation();
         }
 
         private void PlayBackgroundMusic()
         {
-            bg_music.PlayLooping();
+            backgroundMusic.PlayLooping();
         }
 
-        private void QuitButtonClick(object sender, RoutedEventArgs e)
+        private async void QuitButtonClick(object sender, RoutedEventArgs e)
         {
+            UiClick();
+
+            await Task.Delay(1000);
+
             Environment.Exit(0);
         }
 
-        private void StartVerticalAnimation()
+        private void logoAnimation()
         {
-            DoubleAnimation verticalAnimation = new DoubleAnimation
-            {
-                From = 0,        
-                To = 20,
-                Duration = new Duration(TimeSpan.FromSeconds(3.0)),
-                AutoReverse = true,
-                RepeatBehavior = RepeatBehavior.Forever
-            };
-            ufoTransform.BeginAnimation(TranslateTransform.YProperty, verticalAnimation);
+            DoubleAnimation animation = new DoubleAnimation { From = 0, To = 20, 
+                Duration = new Duration(TimeSpan.FromSeconds(3.0)), AutoReverse = true,
+                RepeatBehavior = RepeatBehavior.Forever };
+            logoTransform.BeginAnimation(TranslateTransform.YProperty, animation);
         }
-
-    private void Button_Click(object sender, RoutedEventArgs e)
-    {
-
-    }
 
         private void OpenCodeButtonClick(object sender, RoutedEventArgs e)
         {
-            string directoryPath = AppDomain.CurrentDomain.BaseDirectory + "..\\..\\TEXT\\codeTemp.txt";
-
-            File.Copy(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\TEXT\\code.txt", directoryPath, true);
-
-            Console.WriteLine(directoryPath);
-
-            string code = Properties.Resources.code;
-
-            Process.Start("notepad.exe", directoryPath);
-
-            string url = "https://github.com/snezh0ks/VTORJENIE_NLO";
-
+            UiClick();
             Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+        }
 
+        private void Voice(object sender, RoutedEventArgs e)
+        {
+            voiceSound.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\Resources\\voice.wav"));
+            voiceSound.Play();
+        }
 
+        private void UiClick()
+        {
+            uiSound.Open(new Uri(AppDomain.CurrentDomain.BaseDirectory + "..\\..\\Resources\\ui.wav"));
+            uiSound.Play();
+        }
+
+        private void PlayButtonClick(object sender, RoutedEventArgs e)
+        {
+            UiClick();
         }
     }
 }

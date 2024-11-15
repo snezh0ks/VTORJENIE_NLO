@@ -5,9 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VTORJENIE_NLO"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280" 
+        Title="Вторжение НЛО" 
+        Height="720" 
+        Width="1280" 
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
+
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -53,29 +56,33 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid>
 
-        
+
+
+    <Grid>
         <Canvas>
-            <Image Source="IMG\menuBG.png" Width="1280" Height="720"></Image>
-            <Image Source="IMG\UFO.png" Width="400" Height="400" Canvas.Left="160" Canvas.Top="160" >
+            <Image Source="IMG\background.png" Width="1280" Height="720"></Image>
+            <Image MouseLeftButtonUp="Voice" Cursor="Hand" Source="IMG\logo.png" Width="400" Height="400" Canvas.Left="200" Canvas.Top="160" RenderOptions.BitmapScalingMode="NearestNeighbor">
                 <Image.RenderTransform>
-                    <TranslateTransform x:Name="ufoTransform"/>
+                    <TranslateTransform x:Name="logoTransform"/>
                 </Image.RenderTransform>
             </Image>
         </Canvas>
 
         <Button 
             Content="Начать игру" 
-            Style="{DynamicResource MenuButtons}" Margin="825,330,40,260" Click="Button_Click"/>
+            Style="{DynamicResource MenuButtons}" Margin="825,330,40,260" 
+            Click="PlayButtonClick"/>
         <Button 
             Click="OpenCodeButtonClick"
-            Content="Открыть код программы" 
+            Content="Открыть код программы"
             Style="{DynamicResource MenuButtons}" Margin="825,440,40,150" RenderTransformOrigin="0.5,0.501"/>
         <Button 
             Click="QuitButtonClick"
             Content="Выйти из игры" 
             Style="{DynamicResource MenuButtons}" Margin="825,550,40,40"/>
 
+        <Label Content="Вторжение НЛО" Margin="207,540,680,100" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/Resources/#Monocraft" FontSize="32" Foreground="#FFF"></Label>
+        
     </Grid>
 </Window>
