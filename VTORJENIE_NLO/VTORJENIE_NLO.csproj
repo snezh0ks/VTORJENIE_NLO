@@ -83,6 +83,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Resource Include="stars.png" />
     <None Include="Resources\voice.wav" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -98,6 +99,18 @@
     <Resource Include="IMG\logo.png" />
     <Resource Include="IMG\background.png" />
     <None Include="Resources\background.wav" />
+    <Resource Include="IMG\stars.png" />
+    <Resource Include="IMG\laser.png" />
+    <Resource Include="IMG\asteroid-1.png" />
+    <Resource Include="IMG\asteroid-2.png" />
+    <Resource Include="IMG\ufo-left.png" />
+    <Resource Include="IMG\ufo-right.png" />
+    <Resource Include="IMG\ufo-down.png" />
+    <Resource Include="IMG\ufo-up.png" />
+    <Resource Include="IMG\ufo-left-down.png" />
+    <Resource Include="IMG\ufo-left-up.png" />
+    <Resource Include="IMG\ufo-right-down.png" />
+    <Resource Include="IMG\ufo-right-up.png" />
     <Content Include="Resources\Monocraft.otf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

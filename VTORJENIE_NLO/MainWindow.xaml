@@ -9,7 +9,9 @@
         Height="720" 
         Width="1280" 
         WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        KeyDown="OnKeyDown"
+        KeyUp="OnKeyUp">
 
     <Window.Resources>
         <Style x:Key="FocusVisual">
@@ -21,11 +23,11 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        
+
         <ImageBrush x:Key="Button.Normal.Image" ImageSource="IMG\buttonNormal.png"></ImageBrush>
         <ImageBrush x:Key="Button.Hover.Image" ImageSource="IMG\buttonHover.png"></ImageBrush>
         <ImageBrush x:Key="Button.Pressed.Image" ImageSource="IMG\buttonPressed.png"></ImageBrush>
-        
+
         <Style x:Key="MenuButtons" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Background" Value="{StaticResource Button.Normal.Image}"/>
@@ -58,31 +60,75 @@
     </Window.Resources>
 
 
-
     <Grid>
-        <Canvas>
-            <Image Source="IMG\background.png" Width="1280" Height="720"></Image>
-            <Image MouseLeftButtonUp="Voice" Cursor="Hand" Source="IMG\logo.png" Width="400" Height="400" Canvas.Left="200" Canvas.Top="160" RenderOptions.BitmapScalingMode="NearestNeighbor">
-                <Image.RenderTransform>
-                    <TranslateTransform x:Name="logoTransform"/>
-                </Image.RenderTransform>
-            </Image>
-        </Canvas>
+        <Grid x:Name="MENU" Visibility="Visible">
+            <Canvas>
+                <Image Source="IMG\background.png" Width="1280" Height="720"></Image>
+                <Image Source="IMG\stars.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Height="720" Width="1280">
 
-        <Button 
-            Content="Начать игру" 
-            Style="{DynamicResource MenuButtons}" Margin="825,330,40,260" 
-            Click="PlayButtonClick"/>
-        <Button 
-            Click="OpenCodeButtonClick"
-            Content="Открыть код программы"
-            Style="{DynamicResource MenuButtons}" Margin="825,440,40,150" RenderTransformOrigin="0.5,0.501"/>
-        <Button 
-            Click="QuitButtonClick"
-            Content="Выйти из игры" 
-            Style="{DynamicResource MenuButtons}" Margin="825,550,40,40"/>
+                    <Image.OpacityMask>
+                        <SolidColorBrush Color="Black" Opacity="0.5"/>
+                    </Image.OpacityMask>
 
-        <Label Content="Вторжение НЛО" Margin="207,540,680,100" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/Resources/#Monocraft" FontSize="32" Foreground="#FFF"></Label>
-        
+                </Image>
+
+                <Image MouseLeftButtonUp="alienClickPlay" Cursor="Hand" Source="IMG\logo.png" Width="400" Height="400" Canvas.Left="200" Canvas.Top="160" RenderOptions.BitmapScalingMode="NearestNeighbor">
+                    <Image.RenderTransform>
+                        <TranslateTransform x:Name="alienTransform"/>
+                    </Image.RenderTransform>
+                </Image>
+            </Canvas>
+
+            <Button 
+                Content="Начать игру" 
+                Style="{DynamicResource MenuButtons}" Margin="825,330,40,260" 
+                Click="PlayButtonClick"/>
+            <Button 
+                Click="OpenCodeButtonClick"
+                Content="Открыть код программы"
+                Style="{DynamicResource MenuButtons}" Margin="825,440,40,150" RenderTransformOrigin="0.5,0.501"/>
+            <Button 
+                Click="QuitButtonClick"
+                Content="Выйти из игры" 
+                Style="{DynamicResource MenuButtons}" Margin="825,550,40,40"/>
+
+            <Label Content="Вторжение НЛО" Margin="207,540,680,100" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="/Resources/#Monocraft" FontSize="32" Foreground="#FFF"></Label>
+
+        </Grid>
+
+        <Grid x:Name="GAME" Visibility="Hidden">
+            <Canvas Name="ufoCanvas" Width="1280" Height="720">
+
+                <Image Source="IMG\background.png" Width="1280" RenderOptions.BitmapScalingMode="NearestNeighbor"></Image>
+
+                <Image Source="IMG\stars.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Height="720" Width="1280">
+
+                    <Image.RenderTransform>
+                        <TranslateTransform x:Name="firstStarsTransform"/>
+                    </Image.RenderTransform>
+
+                    <Image.OpacityMask>
+                        <SolidColorBrush Color="Black" Opacity="0.5"/>
+                    </Image.OpacityMask>
+                </Image>
+
+                <Image Source="stars.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Height="720" Width="1280">
+
+                    <Image.RenderTransform>
+                        <TranslateTransform x:Name="secondStarsTransform"/>
+                    </Image.RenderTransform>
+
+                    <Image.OpacityMask>
+                        <SolidColorBrush Color="Black" Opacity="0.75"/>
+                    </Image.OpacityMask>
+
+                </Image>
+
+                <Image Source="IMG\logo.png" Name="ufoSprite" RenderOptions.BitmapScalingMode="NearestNeighbor" Height="120" Canvas.Left="35" Canvas.Top="300" Width="120" RenderTransformOrigin="0.48,1.4"/>
+
+            </Canvas>
+        </Grid>
+
     </Grid>
+
 </Window>
