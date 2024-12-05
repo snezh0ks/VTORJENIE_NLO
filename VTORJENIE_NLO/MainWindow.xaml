@@ -97,7 +97,7 @@
         </Grid>
 
         <Grid x:Name="GAME" Visibility="Hidden">
-            <Canvas Name="ufoCanvas" Width="1280" Height="720">
+            <Canvas Name="ufoCanvas" Width="1270" Height="710">
 
                 <Image Source="IMG\background.png" Width="1280" RenderOptions.BitmapScalingMode="NearestNeighbor"></Image>
 
@@ -112,7 +112,7 @@
                     </Image.OpacityMask>
                 </Image>
 
-                <Image Source="stars.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Height="720" Width="1280">
+                <Image Source="IMG\stars.png" RenderOptions.BitmapScalingMode="NearestNeighbor" Height="720" Width="1280">
 
                     <Image.RenderTransform>
                         <TranslateTransform x:Name="secondStarsTransform"/>
@@ -124,7 +124,7 @@
 
                 </Image>
 
-                <Image Source="IMG\logo.png" Name="ufoSprite" RenderOptions.BitmapScalingMode="NearestNeighbor" Height="120" Canvas.Left="35" Canvas.Top="300" Width="120" RenderTransformOrigin="0.48,1.4"/>
+                <Image Source="IMG\logo.png" Name="ufoSprite" RenderOptions.BitmapScalingMode="NearestNeighbor" Height="120"  Canvas.Left="30" Canvas.Top="300" Width="120" RenderTransformOrigin="0.48,1.4"/>
 
             </Canvas>
         </Grid>

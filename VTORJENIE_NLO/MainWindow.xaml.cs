@@ -93,7 +93,7 @@ namespace VTORJENIE_NLO
             newX = newX < 0 ? 0 : newX;
             newX = newX > CANVAS.Width - SPRITE.Width ? CANVAS.Width - SPRITE.Width : newX;
 
-            newY = newY < 0 ? 0 : newY;
+            newY = newY < -20 ? -20 : newY;
             newY = newY > CANVAS.Height - SPRITE.Height ? CANVAS.Height - SPRITE.Height : newY;
 
             Canvas.SetLeft(SPRITE, newX);
