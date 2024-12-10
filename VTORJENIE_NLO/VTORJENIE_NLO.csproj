@@ -83,6 +83,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\takedamage.wav" />
     <None Include="Resources\voice.wav" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -110,6 +111,30 @@
     <Resource Include="IMG\ufo-left-up.png" />
     <Resource Include="IMG\ufo-right-down.png" />
     <Resource Include="IMG\ufo-right-up.png" />
+    <Resource Include="IMG\GrassHover.png" />
+    <Resource Include="IMG\GrassNormal.png" />
+    <Resource Include="IMG\GrassPressed.png" />
+    <Resource Include="IMG\HellHover.png" />
+    <Resource Include="IMG\HellNormal.png" />
+    <Resource Include="IMG\HellPressed.png" />
+    <Resource Include="IMG\StoneHover.png" />
+    <Resource Include="IMG\StoneNormal.png" />
+    <Resource Include="IMG\StonePressed.png" />
+    <Resource Include="IMG\HP0.png" />
+    <Resource Include="IMG\HP100.png" />
+    <Resource Include="IMG\HP50.png" />
+    <Resource Include="IMG\HP75.png" />
+    <Resource Include="IMG\enemy.png" />
+    <Resource Include="IMG\coin.png" />
+    <Resource Include="IMG\HP25.png" />
+    <None Include="Resources\coin.wav" />
+    <None Include="Resources\laser.wav" />
+    <Resource Include="IMG\merchant.png" />
+    <Resource Include="IMG\platform.png" />
+    <Resource Include="IMG\teleport1.png" />
+    <Resource Include="IMG\teleport2.png" />
+    <Resource Include="IMG\pivo.png" />
+    <None Include="Resources\explosion.wav" />
     <Content Include="Resources\Monocraft.otf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
